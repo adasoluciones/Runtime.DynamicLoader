@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Util.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Ada.Framework.Util.Core.Validation.TO.ResultadoValidacion`2">
+            <summary>
+            Entrega el resultado de la validación
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <typeparam name="T">Tipo de valor que devuelve la cosa</typeparam>
+            <typeparam name="E">Enumeración de errores</typeparam>
+        </member>
+        <member name="P:Ada.Framework.Util.Core.Validation.TO.ResultadoValidacion`2.Valor">
+            <summary>
+            Obtiene o establece el valor esperado de la validacion. Utilizado para realizar la persistencia.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="T:Ada.Framework.Util.Core.Exceptions.UtilException">
+            <summary>
+            Clase que representa una excepción lanzada por Util.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Core.Exceptions.UtilException.#ctor">
+            <summary>
+            Constructor sin parámetros.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Core.Exceptions.UtilException.#ctor(System.String)">
+            <summary>
+            Constructor de la clase que proporciona un mensaje de descripción.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="mensaje">Mensaje de descripción.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.Core.Exceptions.UtilException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor de la clase que proporciona información de un valor serializable y su contexto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="serializationInfo">Objeto que almacena todos los datos para serializar o deserializar un objeto.</param>
+            <param name="streamingContext">Describe el origen y destino de una secuencia de serialización determinada y proporciona un contexto definido por el llamador adicional.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.Core.Exceptions.UtilException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor de la clase que proporciona un mensaje de descripción, y la excepcion específica que la ocacionó.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="mensaje">Mensaje de descripción.</param>
+            <param name="innerException">Excepción que la lazó.</param>
+        </member>
+        <member name="T:Ada.Framework.Util.Core.Editions.TO.ResultadoEdicion`1">
+            <summary>
+            Entrega el resultado de la edición
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <typeparam name="E">Enumeración de errores</typeparam>
+        </member>
+        <member name="P:Ada.Framework.Util.Core.Editions.TO.ResultadoEdicion`1.CodigoEstado">
+            <summary>
+            Obtiene o establece el valor de enumeración que indica el estado del valor, por ejemplo, Valido.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.Core.Editions.TO.ResultadoEdicion`1.ValorAdicional">
+            <summary>
+            Obtiene o establece el valor adicional al error señalado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.Core.Editions.TO.ResultadoEdicion`1.ValorFormateado">
+            <summary>
+            Obtiene o establece el valor
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+    </members>
+</doc>

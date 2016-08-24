@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Util.FileMonitor</name>
+    </assembly>
+    <members>
+        <member name="T:Ada.Framework.Util.FileMonitor.MonitorArchivoFactory">
+            <summary>
+            Factoría del utilitario de archivos.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivoFactory.ObtenerArchivo">
+            <summary>
+            Obtiene la implementación para el utilitario actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns>Una implementación de <see>Ada.HardyFramework.Estructura.FileMonitor.IArchivo</see>.</returns>
+        </member>
+        <member name="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">
+            <summary>
+            Clase que representa una excepción al acceder a un archivo que no existe.  Esta clase no puede heredarse.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="F:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException.rutaArchivo">
+            <summary>
+            Contiene la ruta del archivo no encontrado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException.Ruta">
+            <summary>
+            Obtiene la ruta del archivo que no ha sido encontrado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException.#ctor(System.String,System.String)">
+            <summary>
+            Constructor de la clase que proporciona un mensaje de descripción.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="mensaje">Mensaje de descripción.</param>
+            <param name="ruta">Ruta del archivo no encontrado.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Constructor de la clase que proporciona un mensaje de descripción, la ruta del archivo y la excepcion específica que la ocacionó.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="mensaje">Mensaje de descripción.</param>
+            <param name="ruta">Ruta del archivo no encontrado.</param>
+            <param name="innerException">Excepción que la lazó.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor que recive un serializador y un contexto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="info">Almacena todos los datos necesarios para serializar o deserializar un objeto.</param>
+            <param name="context">Describe el origen y destino de una secuencia de serialización determinada y proporciona
+            un contexto definido por el llamador adicional.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Cuando se reemplaza en una clase derivada, establece System.Runtime.Serialization.SerializationInfo
+            con información sobre la excepción.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="info">Constructor <see cref="T:System.Runtime.Serialization.SerializationInfo"/> que contiene los datos serializados del objeto 
+            que hacen referencia a la excepción que se va a producir.</param>
+            <param name="context"> Enumeración <see cref="T:System.Runtime.Serialization.StreamingContext"/> que contiene información
+            contextual sobre el origen o el destino.</param>
+            <exception cref="T:System.ArgumentNullException">Lanzada si info es nulo.</exception>
+        </member>
+        <member name="T:Ada.Framework.Util.FileMonitor.MonitorArchivo">
+            <summary>
+            Representa un archivo en el sistema.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.MonitorArchivo.RutaActual">
+            <summary>
+            Obtiene el directorio de la aplicación actual (la que lo invoca).
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/01/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.MonitorArchivo.RUTA_AUTOMATICA">
+            <summary>
+            Obtiene el valor que indica se debe reemplazar por la ruta actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.MonitorArchivo.SEPARADOR_CARPETAS">
+            <summary>
+            Obtiene el valor que indica se debe reemplazar por el separador de carpetas del sistema operativo actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 12/01/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.MonitorArchivo.RUTA_ACTUAL">
+            <summary>
+            Obtiene el valor que indica se debe reemplazar por la ruta actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.MonitorArchivo.NOMBRE_ARCHIVO">
+            <summary>
+            Obtiene el valor que indica se debe reemplazar por en nombre de archivo indicado. 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 26/11/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.Existe(System.String)">
+            <summary>
+            Comprueba si un archivo existe en el sistema de archivos del sistema Windows.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta completa del archivo en el sistema.</param>
+            <returns><value>true</value> de encontrarlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.FueModificado(System.DateTime,System.String)">
+            <summary>
+            Comprueba si un archivo a sido modificado, según la fecha de última modificación especificada.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="fechaUltimaModificacion">Fecha de última modificación.</param>
+            <param name="ruta">Ruta completa del archivo en el sistema.</param>
+            <returns><value>true</value> de haber sido modificado, o <value>false</value> de lo contrario.</returns>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada al no encontrar el archivo en el sistema.</exception>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.ObtenerFechaUltimaModificacion(System.String)">
+            <summary>
+            Obtiene la fecha de última modificación del archivo al que representa la instancia actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta completa del archivo en el sistema.</param>
+            <returns>Fecha y hora de última modificación.</returns>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada al no encontrar el archivo en el sistema.</exception>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.ObtenerRutaArchivo(System.String,System.String)">
+            <summary>
+            Obtiene la ruta de una archivo de manera automática o manual, según el valor de la ruta.
+            De ser el valor de ruta igual al valor de RUTA_AUTOMATICA, se busca la ruta actual y se añade el nombre del archivo.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada en caso que no exista el archivo en la ruta final.</exception>
+            <param name="ruta">Ruta del archivo.</param>
+            <param name="nombreArchivo">Nombre del archivo.</param>
+            <returns>Ruta final del archivo solicitado.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.ObtenerRutaArchivoExistente(System.String,System.String)">
+            <summary>
+            Obtiene la ruta de una archivo de manera automática o manual, según el valor de la ruta.
+            De ser el valor de ruta igual al valor de RUTA_AUTOMATICA, se busca la ruta actual y se añade el nombre del archivo.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada en caso que no exista el archivo en la ruta final.</exception>
+            <param name="ruta">Ruta del archivo.</param>
+            <param name="nombreArchivo">Nombre del archivo.</param>
+            <returns>Ruta final del archivo solicitado.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.ComprobarExistenciaArchivo(System.String)">
+            <summary>
+            Comprueba si un archivo existe. Lanza una excepción si no existe el archivo en la ruta especificada.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada en caso que no exista el archivo en la ruta especificada.</exception>
+            <param name="ruta">Ruta del archivo a comprobar.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.PrepararDirectorio(System.String)">
+            <summary>
+            Comprueba la existencia de cada subdirectorio de la ruta. De no existir una carpeta, la crea.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta a preparar.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.ObtenerRutaAbsoluta(System.String,System.String)">
+            <summary>
+            Obtiene la ruta absoluta a partir de una ruta relativa, paramétrica o una combinación de ambas.
+            </summary>
+            <example>
+                RutaActual = "C:\Ruta\de\ejemplo".
+                
+                Ruta relativa: 
+                    ObtenerRutaAbsoluta(RutaActual,"../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+                Ruta Paramétrica:
+                    ObtenerRutaAbsoluta(RutaActual,"[RutaActual][DS]a.txt");
+                Retorno:
+                    "C:\Ruta\de\ejemplo\a.txt"
+                
+                Ruta combinada: 
+                    ObtenerRutaAbsoluta(RutaActual,"[RutaActual]/../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+            </example>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="rutaReferencial">Ruta de referencia para realizar la evaluación. Generalmente la ruta actual.</param>
+            <param name="ruta">Ruta ralativa, paramétrica o una combinación.</param>
+            <returns>Ruta absoluta solicitada.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.ObtenerRutaAbsoluta(System.String)">
+            <summary>
+            Obtiene la ruta absoluta a partir de una ruta relativa, paramétrica o una combinación de ambas.
+            </summary>
+            <example>
+                RutaActual = "C:\Ruta\de\ejemplo".
+                
+                Ruta relativa: 
+                    ObtenerRutaAbsoluta("../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+                Ruta Paramétrica:
+                    ObtenerRutaAbsoluta("[RutaActual][DS]a.txt");
+                Retorno:
+                    "C:\Ruta\de\ejemplo\a.txt"
+                
+                Ruta combinada: 
+                    ObtenerRutaAbsoluta("[RutaActual]/../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+            </example>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta ralativa, paramétrica o una combinación.</param>
+            <returns>Ruta absoluta solicitada.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.EsDirectorio(System.String)">
+            <summary>
+            Determina si una ruta corresponde a un directorio.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 15/08/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta a verificar.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.MonitorArchivo.EsArchivo(System.String)">
+            <summary>
+            Determina si una ruta corresponde a un archivo.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 15/08/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta a verificar.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.FileMonitor.IMonitorArchivo">
+            <summary>
+            Contrato del utilitario de archivos.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.IMonitorArchivo.RUTA_AUTOMATICA">
+            <summary>
+            Obtiene el valor que indica que la ruta que debe calcular automáticamente según la ruta actual de la aplicación.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.IMonitorArchivo.RutaActual">
+            <summary>
+            Obtiene el directorio de la aplicación actual (la que lo invoca).
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/01/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.IMonitorArchivo.SEPARADOR_CARPETAS">
+            <summary>
+            Obtiene el valor que indica se debe reemplazar por el separador de carpetas del sistema operativo actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 12/01/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.IMonitorArchivo.RUTA_ACTUAL">
+            <summary>
+            Obtiene el valor que indica se debe reemplazar por la ruta actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="P:Ada.Framework.Util.FileMonitor.IMonitorArchivo.NOMBRE_ARCHIVO">
+            <summary>
+            Obtiene el valor que indica se debe reemplazar por en nombre de archivo indicado. 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 26/11/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.Existe(System.String)">
+            <summary>
+            Comprueba si un archivo existe en el sistema de archivos físico.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta completa del archivo en el sistema.</param>
+            <returns><value>true</value> de encontrarlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.ObtenerFechaUltimaModificacion(System.String)">
+            <summary>
+            Obtiene la fecha de última modificación del archivo al que representa la instancia actual.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta completa del archivo en el sistema.</param>
+            <returns>Fecha y hora de última modificación.</returns>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada al no encontrar el archivo en el sistema.</exception>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.FueModificado(System.DateTime,System.String)">
+            <summary>
+            Comprueba si un archivo a sido modificado, según la fecha de última modificación especificada.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="fechaUltimaModificacion">Fecha de última modificación.</param>
+            <param name="ruta">Ruta completa del archivo en el sistema.</param>
+            <returns><value>true</value> de haber sido modificado, o <value>false</value> de lo contrario.</returns>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada al no encontrar el archivo en el sistema.</exception>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.ObtenerRutaArchivo(System.String,System.String)">
+            <summary>
+            Obtiene la ruta de una archivo de manera automática o manual, según el valor de la ruta.
+            De ser el valor de ruta igual al valor de RUTA_AUTOMATICA, se busca la ruta actual y se añade el nombre del archivo.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta del archivo.</param>
+            <param name="nombreArchivo">Nombre del archivo.</param>
+            <returns>Ruta final del archivo solicitado.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.ObtenerRutaAbsoluta(System.String,System.String)">
+            <summary>
+            Obtiene la ruta absoluta a partir de una ruta relativa, paramétrica o una combinación de ambas.
+            </summary>
+            <example>
+                RutaActual = "C:\Ruta\de\ejemplo".
+                
+                Ruta relativa: 
+                    ObtenerRutaAbsoluta(RutaActual,"../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+                Ruta Paramétrica:
+                    ObtenerRutaAbsoluta(RutaActual,"[RutaActual][DS]a.txt");
+                Retorno:
+                    "C:\Ruta\de\ejemplo\a.txt"
+                
+                Ruta combinada: 
+                    ObtenerRutaAbsoluta(RutaActual,"[RutaActual]/../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+            </example>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="rutaReferencial">Ruta de referencia para realizar la evaluación. Generalmente la ruta actual.</param>
+            <param name="ruta">Ruta ralativa, paramétrica o una combinación.</param>
+            <returns>Ruta absoluta solicitada.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.ObtenerRutaAbsoluta(System.String)">
+            <summary>
+            Obtiene la ruta absoluta a partir de una ruta relativa, paramétrica o una combinación de ambas.
+            </summary>
+            <example>
+                RutaActual = "C:\Ruta\de\ejemplo".
+                
+                Ruta relativa: 
+                    ObtenerRutaAbsoluta("../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+                Ruta Paramétrica:
+                    ObtenerRutaAbsoluta("[RutaActual][DS]a.txt");
+                Retorno:
+                    "C:\Ruta\de\ejemplo\a.txt"
+                
+                Ruta combinada: 
+                    ObtenerRutaAbsoluta("[RutaActual]/../a.txt");
+                Retorno:
+                    "C:\Ruta\de\a.txt"
+                
+            </example>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta ralativa, paramétrica o una combinación.</param>
+            <returns>Ruta absoluta solicitada.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.ObtenerRutaArchivoExistente(System.String,System.String)">
+            <summary>
+            Obtiene la ruta de una archivo de manera automática o manual, según el valor de la ruta.
+            De ser el valor de ruta igual al valor de RUTA_AUTOMATICA, se busca la ruta actual y se añade el nombre del archivo.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada en caso que no exista el archivo en la ruta final.</exception>
+            <param name="ruta">Ruta del archivo.</param>
+            <param name="nombreArchivo">Nombre del archivo.</param>
+            <returns>Ruta final del archivo solicitado.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.ComprobarExistenciaArchivo(System.String)">
+            <summary>
+            Comprueba si un archivo existe. Lanza una excepción si no existe el archivo en la ruta especificada.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.FileMonitor.Exceptions.ArchivoNoEncontradoException">Lanzada en caso que no exista el archivo en la ruta especificada.</exception>
+            <param name="ruta">Ruta del archivo a comprobar.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.PrepararDirectorio(System.String)">
+            <summary>
+            Comprueba la existencia de cada subdirectorio de la ruta. De no existir una carpeta, la crea.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 06/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta a preparar.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.EsDirectorio(System.String)">
+            <summary>
+            Determina si una ruta corresponde a un directorio.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 15/08/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta a verificar.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.FileMonitor.IMonitorArchivo.EsArchivo(System.String)">
+            <summary>
+            Determina si una ruta corresponde a un archivo.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 15/08/2016 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="ruta">Ruta a verificar.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

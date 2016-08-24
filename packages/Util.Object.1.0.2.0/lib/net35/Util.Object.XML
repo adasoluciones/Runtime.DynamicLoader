@@ -1,0 +1,1830 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Util.Object</name>
+    </assembly>
+    <members>
+        <member name="T:Ada.Framework.Util.Object.InfoScope.IObjeto">
+            <summary>
+            Contrato de el utilitario de reflexión con alcance de Info.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esBooleano(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo bool.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esColeccion(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo colección.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esDecimal(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo decimal.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esDiccionario(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo <see cref="T:System.Collections.IDictionary"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esEnumeracion(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo Enum.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esNumero(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo numérico.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esPrimitivo(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo creado por el usuario (no primitivo) o de C#(primitivo).
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";                 --> Primitivo
+                String a = String.Empty;                 --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.esString(System.Reflection.PropertyInfo,System.Boolean)">
+            <summary>
+            Comprueba si una propiedad es de tipo string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.TipoSingular(System.Reflection.PropertyInfo)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de una colección.
+            <example>
+                string tS = TipoSingular(IList of UsuarioTO);
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.GetPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene la propiedad de un objeto mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.GetValorPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.SetValorPropiedad(System.Object,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Cambia el valor de la propiedad de un objeto, especificado, mediante reflexión.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <param name="valor">Valor de la propiead.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.IObjeto.GetValorPropiedad(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.InfoScope.Objeto">
+            <summary>
+            Utilitario de reflexión con alcance de Info.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esPrimitivo(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo creado por el usuario (no primitivo) o de C#(primitivo).
+            Llama a TypeScope con la PropertyType de la propiedad.
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";                 --> Primitivo
+                String a = String.Empty;                 --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esEnumeracion(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo Enum.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esDiccionario(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo <see cref="T:System.Collections.IDictionary"/>.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esColeccion(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo colección.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esString(System.Reflection.PropertyInfo,System.Boolean)">
+            <summary>
+            Comprueba si una propiedad es de tipo string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esDecimal(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo decimal.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esBooleano(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo bool.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.esNumero(System.Reflection.PropertyInfo)">
+            <summary>
+            Comprueba si una propiedad es de tipo numérico.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.TipoSingular(System.Reflection.PropertyInfo)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de una colección.
+            Llama a TypeScope con la PropertyType de la propiedad.
+            <example>
+                string tS = TipoSingular(IList of UsuarioTO);
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_propiedad">Propiedad a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.GetPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene la propiedad de un objeto mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.GetValorPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.SetValorPropiedad(System.Object,System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Cambia el valor de la propiedad de un objeto, especificado, mediante reflexión.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <param name="valor">Valor de la propiead.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.Objeto.GetValorPropiedad(System.Object,System.Reflection.PropertyInfo)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.InfoScope.ObjetoFactory">
+            <summary>
+            Factoría del utilitario de reflexión con alcance de Info.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.InfoScope.ObjetoFactory.ObtenerObjeto">
+            <summary>
+            Obtiene la instancia de una implementación de <see cref="T:Ada.Framework.Util.Object.InfoScope.IObjeto"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.IObjeto">
+            <summary>
+            Contrato de el utilitario de reflexión.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esBooleano(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo bool.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esColeccion(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo colección.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esDecimal(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo decimal.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esDiccionario(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo <see cref="T:System.Collections.IDictionary"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esEnumeracion(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo Enum.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esNumero(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo creado por el usuario (no primitivo) o de C#(primitivo).
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";                 --> Primitivo
+                String a = String.Empty;                 --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esPrimitivo(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es creado por el usuario (no primitivo) o de C#(primitivo).
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";        --> Primitivo
+                String a = String.Empty;        --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.esString(System.Object,System.Boolean)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.ToStr(System.Object,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación de un objeto, tipo o propiedad en string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objet, tipo o propiedado a representar.</param>
+            <param name="_esRecursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="_representaNoPrimitivos">Permite representar el tipo de los valores no primitivos propiedad por propiedad, o sólo indicar su nombre.</param>
+            <param name="_representaColecciones">Permite representar colecciones. Itera por cada elemento.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.ToStrType(System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación del tipo de un objeto, tipo o propiedad.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a representar.</param>
+            <param name="_recursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.TipoSingular(System.Object)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de una colección.
+            <example>
+                string tS = TipoSingular(IList of UsuarioTO);
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.SetValorPropiedad(System.Object,System.String,System.Object)">
+            <summary>
+            Cambia el valor de la propiedad de un objeto, mediante reflexión.Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <param name="valor">Valor de la propiedad.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.GetValorPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.IObjeto.ObtenerInstancia(System.String,System.Object[])">
+            <summary>
+            Obtiene una nueva instancia del tipo especificado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="tipo">Tipo de la instancia.</param>
+            <param name="parametros">Array de parametros del contructor de ese tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.ObjectScope.IObjeto">
+            <summary>
+            Contrato de el utilitario de reflexión con alcance de Object.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esBooleano(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo bool.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esColeccion(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo colección.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esDecimal(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo decimal.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esDiccionario(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo <see cref="T:System.Collections.IDictionary"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esEnumeracion(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo Enum.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esNumero(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo numérico.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esPrimitivo(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo creado por el usuario (no primitivo) o de C#(primitivo).
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";                 --> Primitivo
+                String a = String.Empty;                 --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.esString(System.Object,System.Boolean)">
+            <summary>
+            Comprueba si un objeto es de tipo string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.TipoSingular(System.Object)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de una colección.
+            <example>
+                string tS = TipoSingular(IList of UsuarioTO);
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.ToStr(System.Object,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación de un objeto en string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a representar.</param>
+            <param name="_esRecursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="_representaNoPrimitivos">Permite representar el tipo de los valores no primitivos propiedad por propiedad, o sólo indicar su nombre.</param>
+            <param name="_representaColecciones">Permite representar colecciones. Itera por cada elemento.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.ToStrType(System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación del tipo de un objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a representar.</param>
+            <param name="_recursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.GetValorPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.SetValorPropiedad(System.Object,System.String,System.Object)">
+            <summary>
+            Cambia el valor de la propiedad de un objeto, mediante reflexión.Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <param name="valor">Valor de la propiedad.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.IObjeto.ObtenerInstancia(System.String,System.Object[])">
+            <summary>
+            Obtiene una nueva instancia del tipo especificado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="tipo">Tipo de la instancia.</param>
+            <param name="parametros">Array de parametros del contructor de ese tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.ObjectScope.Objeto">
+            <summary>
+            Utilitario de reflexión con alcance de Object.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.ToStr(System.Object,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación de un objeto en string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a representar.</param>
+            <param name="_esRecursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="_representaNoPrimitivos">Permite representar el tipo de los valores no primitivos propiedad por propiedad, o sólo indicar su nombre.</param>
+            <param name="_representaColecciones">Permite representar colecciones. Itera por cada elemento.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.ToStrType(System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación del tipo de un objeto.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a representar.</param>
+            <param name="_recursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esPrimitivo(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo creado por el usuario (no primitivo) o de C#(primitivo).
+            Llama a TypeScope con GetType() del objeto.
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";                 --> Primitivo
+                String a = String.Empty;                 --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esColeccion(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo colección.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esEnumeracion(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo Enum.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esDecimal(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo decimal.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esNumero(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo numérico.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esBooleano(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo bool.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esString(System.Object,System.Boolean)">
+            <summary>
+            Comprueba si un objeto es de tipo string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.esDiccionario(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo <see cref="T:System.Collections.IDictionary"/>.
+            Llama a TypeScope con GetType() del objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.TipoSingular(System.Object)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de una colección.
+            Llama a TypeScope con GetType() del objeto.
+            <example>
+                string tS = TipoSingular(IList of UsuarioTO);
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.SetValorPropiedad(System.Object,System.String,System.Object)">
+            <summary>
+            Cambia el valor de la propiedad de un objeto, mediante reflexión.Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <param name="valor">Valor de la propiedad.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.GetValorPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.Objeto.ObtenerInstancia(System.String,System.Object[])">
+            <summary>
+            Obtiene una nueva instancia del tipo especificado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="tipo">Tipo de la instancia.</param>
+            <param name="parametros">Array de parametros del contructor de ese tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.ObjectScope.ObjetoFactory">
+            <summary>
+            Factoría del utilitario de reflexión con alcance de Object.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjectScope.ObjetoFactory.ObtenerObjeto">
+            <summary>
+            Obtiene la instancia de una implementación de <see cref="T:Ada.Framework.Util.Object.ObjectScope.IObjeto"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.Objeto">
+            <summary>
+            Utilitario de reflexión.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.ToStr(System.Object,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación de un objeto, tipo o propiedad en string.
+            Llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objet, tipo o propiedado a representar.</param>
+            <param name="_esRecursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="_representaNoPrimitivos">Permite representar el tipo de los valores no primitivos propiedad por propiedad, o sólo indicar su nombre.</param>
+            <param name="_representaColecciones">Permite representar colecciones. Itera por cada elemento.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.ToStrType(System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación del tipo de un objeto, tipo o propiedad.
+            Llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a representar.</param>
+            <param name="_recursivo">Permite desplazarse mediente las propiedades del objeto.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo de cada objeto (Name o FullName).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esPrimitivo(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es creado por el usuario (no primitivo) o de C#(primitivo).
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";        --> Primitivo
+                String a = String.Empty;        --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esColeccion(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo colección.
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esEnumeracion(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo Enum.
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esDiccionario(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo <see cref="T:System.Collections.IDictionary"/>.
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esDecimal(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo decimal.
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esNumero(System.Object)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo creado por el usuario (no primitivo) o de C#(primitivo).
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            <example>
+                bool a = false;                 --> Primitivo
+                string a = "Hola Mundo";        --> Primitivo
+                String a = String.Empty;        --> Primitivo
+                UsuarioTO a = new UsuarioTO();  --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esBooleano(System.Object)">
+            <summary>
+            Comprueba si un objeto es de tipo bool.
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.esString(System.Object,System.Boolean)">
+            <summary>
+            Comprueba si un objeto, tipo o propiedad es de tipo string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.TipoSingular(System.Object)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de una colección.
+            De ser un tipo, llama a TypeScope con _objeto as Type. Si es una propiedad, llama a InfoScope con _objeto as PropertyInfo.
+            De lo contrario, llama a ObjectScope con el objeto.
+            <example>
+                string tS = TipoSingular(IList of UsuarioTO);
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_objeto">Objeto, tipo o propiedad a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.SetValorPropiedad(System.Object,System.String,System.Object)">
+            <summary>
+            Cambia el valor de la propiedad de un objeto, mediante reflexión.Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <param name="valor">Valor de la propiedad.</param>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.GetValorPropiedad(System.Object,System.String)">
+            <summary>
+            Obtiene el valor de la propiedad de un objeto, especificado, mediante reflexión. Además es válido enviar la propiedad de una propiedad
+            del modo "Direccion.NumeroCasa". 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="objeto">Objeto.</param>
+            <param name="propiedad">Nombre de la propiedad.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.Objeto.ObtenerInstancia(System.String,System.Object[])">
+            <summary>
+            Obtiene una nueva instancia del tipo especificado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="tipo">Tipo de la instancia.</param>
+            <param name="parametros">Array de parametros del contructor de ese tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.ObjetoFactory">
+            <summary>
+            Factoría del utilitario de reflexión.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.ObjetoFactory.ObtenerObjeto">
+            <summary>
+            Obtiene la instancia de una implementación de <see cref="T:Ada.Framework.Util.Object.IObjeto"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.OtherScope.IObjeto">
+            <summary>
+            Contrato de el utilitario de reflexión con alcance de Other.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.OtherScope.IObjeto.TipoSingular(System.String)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular del nombre completo del ensamblado de un tipo(AssemblyQualifiedName). 
+            <example>
+                string tS = TipoSingular("IList<UsuarioTO/>;v1.0;publicKeyToken=065djhkg645;a.dll");
+                    - ts es entonces "UsuarioTO;v1.0;publicKeyToken=065djhkg645;a.dll".
+                NOTA: El AssemblyQualifiedName de ejemplo, no es fielmente correcto. Sólo es para hacerse una idea.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_assemblyQualifiedName">AssemblyQualifiedName de la colección.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.OtherScope.Objeto">
+            <summary>
+            Utilitario de reflexión con alcance de Other.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.OtherScope.Objeto.TipoSingular(System.String)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular del nombre completo del ensamblado de un tipo(AssemblyQualifiedName). 
+            <example>
+                string tS = TipoSingular("IList<UsuarioTO/>;v1.0;publicKeyToken=065djhkg645;a.dll");
+                    - ts es entonces "UsuarioTO;v1.0;publicKeyToken=065djhkg645;a.dll".
+                NOTA: El AssemblyQualifiedName de ejemplo, no es fielmente correcto. Sólo es para hacerse una idea.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_assemblyQualifiedName">AssemblyQualifiedName de la colección.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.OtherScope.ObjetoFactory">
+            <summary>
+            Factoría del utilitario de reflexión con alcance de Other.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.OtherScope.ObjetoFactory.ObtenerObjeto">
+            <summary>
+            Obtiene la instancia de una implementación de <see cref="T:Ada.Framework.Util.Object.OtherScope.IObjeto"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.TypeScope.IObjeto">
+            <summary>
+            Contrato de el utilitario de reflexión con alcance de Type.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esBooleano(System.Type)">
+            <summary>
+            Comprueba si un tipo es bool.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esColeccion(System.Type)">
+            <summary>
+            Comprueba si un tipo es una colección.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esDecimal(System.Type)">
+            <summary>
+            Comprueba si un tipo es un decimal.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esDiccionario(System.Type)">
+            <summary>
+            Comprueba si un tipo es <see cref="T:System.Collections.IDictionary"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esEnumeracion(System.Type)">
+            <summary>
+            Comprueba si un tipo es un Enum.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esNumero(System.Type)">
+            <summary>
+            Comprueba si un tipo es numérico.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esPrimitivo(System.Type)">
+            <summary>
+            Comprueba si tipo es creado por el usuario (no primitivo) o de C#(primitivo).
+            <example>
+                typeof(bool)                 --> Primitivo
+                typeof(string)               --> Primitivo
+                typeof(String)               --> Primitivo
+                typeof(UsuarioTO)            --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.esString(System.Type,System.Boolean)">
+            <summary>
+            Comprueba si un tipo es string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.TipoSingular(System.Type)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de un tipo que sea una colección.
+            <example>
+                string tS = TipoSingular(typeof(IList of UsuarioTO));
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.ToStrType(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación de un tipo.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="tipo">Tipo a representar.</param>
+            <param name="_recursivo">Permite desplazarse mediente las propiedades del tipo.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo (Name o FullName).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.IObjeto.ObtenerInstancia(System.Type,System.Object[])">
+            <summary>
+            Obtiene una nueva instancia del tipo especificado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="tipo">Tipo de la instancia.</param>
+            <param name="parametros">Array de parametros del contructor de ese tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.TypeScope.Objeto">
+            <summary>
+            Utilitario de reflexión con alcance de Type.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esPrimitivo(System.Type)">
+            <summary>
+            Comprueba si tipo es creado por el usuario (no primitivo) o de C#(primitivo).
+            Para ello utiliza el <see cref="T:System.TypeCode"/> (TypeCode.Object) del tipo y de los argumentos genéricos.
+            De ser colección comprueba que el tipo de la colección, sea primitiva también.
+            Si se trata de un diccionario comprueba ambos tipos genéricos recursivamente.
+            <example>
+                typeof(bool)                 --> Primitivo
+                typeof(string)               --> Primitivo
+                typeof(String)               --> Primitivo
+                typeof(UsuarioTO)            --> No primitivo.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esDiccionario(System.Type)">
+            <summary>
+            Comprueba si un tipo es <see cref="T:System.Collections.IDictionary"/>.
+            Para ello comprueba si el tipo es asignable a <see cref="T:System.Collections.IDictionary"/>, si contiene 2 argumentos genéricos
+            y si el nombre del tipo contiene "dictionary";
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esEnumeracion(System.Type)">
+            <summary>
+            Comprueba si un tipo es un Enum.
+            Para ello comprueba que el tipo sea <see cref="T:System.Enum"/> o el tipo base de éste, lo sea.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esColeccion(System.Type)">
+            <summary>
+            Comprueba si un tipo es una colección.
+            Descartando a un string, comprueba si el tipo es asignable a <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esString(System.Type,System.Boolean)">
+            <summary>
+            Comprueba si un tipo es string. Opcionalmente ofrece que interprete un char como string o no.
+            Por defecto no se toma un char como string.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <param name="_incluirChar">Indica si se debe tratar a un char como un string. [Opcional]</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esDecimal(System.Type)">
+            <summary>
+            Comprueba si un tipo es un decimal.
+            Para ello recurre al <see cref="T:System.TypeCode"/> en cuyo caso considera como decimales:
+                - TypeCode.Decimal
+                - TypeCode.Double
+                - TypeCode.Single.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esBooleano(System.Type)">
+            <summary>
+            Comprueba si un tipo es bool.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.esNumero(System.Type)">
+            <summary>
+            Comprueba si un tipo es numérico.
+            Para ello recurre al <see cref="T:System.TypeCode"/> en cuyo caso considera como números:
+                - TypeCode.Byte
+                - TypeCode.SByte
+                - TypeCode.UInt16
+                - TypeCode.UInt32
+                - TypeCode.UInt64
+                - TypeCode.Int16
+                - TypeCode.Int32
+                - TypeCode.Int64
+                - TypeCode.Decimal
+                - TypeCode.Double
+                - TypeCode.Single 
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns><value>true</value> en caso de serlo, o <value>false</value> de lo contrario.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.TipoSingular(System.Type)">
+            <summary>
+            Obtiene el tipo (AssemblyQualifiedName) en singular de un tipo que sea una colección.
+            Llama a OtherScope con la AssemblyQualifiedName del tipo.
+            <example>
+                string tS = TipoSingular(typeof(IList of UsuarioTO));
+                    - ts es entonces UsuarioTO.
+            </example>
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="_tipo">Tipo a comprobar.</param>
+            <returns>AssemblyQualifiedName del tipo en singular.</returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.ToStrType(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación de un tipo.
+            Llama a ToStrType(Type, IList of Type, bool, bool).
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Util.Core.Exceptions.UtilException">Es lanzado al ocurrir una excepción en tiempo de ejecución de cualquier tipo.</exception>
+            <param name="tipo">Tipo a representar.</param>
+            <param name="_recursivo">Permite desplazarse mediente las propiedades del tipo.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo (Name o FullName).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.ToStrType(System.Type,System.Collections.Generic.IList{System.Type},System.Boolean,System.Boolean)">
+            <summary>
+            Obtiene la representación de un tipo, acumulando los tipos ya descritos. (Privado)
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="tipo">Tipo a representar.</param>
+            <param name="tiposDescritos">Lista de tipos descritos anteriormente.</param>
+            <param name="_recursivo">Permite desplazarse mediente las propiedades del tipo.</param>
+            <param name="tipoCompleto">Indica si se debe incluir el tipo completo (Name o FullName).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.Objeto.ObtenerInstancia(System.Type,System.Object[])">
+            <summary>
+            Obtiene una nueva instancia del tipo especificado.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 13/10/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="tipo">Tipo de la instancia.</param>
+            <param name="parametros">Array de parametros del contructor de ese tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ada.Framework.Util.Object.TypeScope.ObjetoFactory">
+            <summary>
+            Factoría del utilitario de reflexión con alcance de Type.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Util.Object.TypeScope.ObjetoFactory.ObtenerObjeto">
+            <summary>
+            Obtiene la instancia de una implementación de <see cref="T:Ada.Framework.Util.Object.TypeScope.IObjeto"/>.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

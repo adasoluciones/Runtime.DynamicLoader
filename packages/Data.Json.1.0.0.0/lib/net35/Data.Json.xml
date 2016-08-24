@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Data.Json</name>
+    </assembly>
+    <members>
+        <member name="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException">
+            <summary>
+            Clase que representa una excepción lanzada al realizar una conversión Json. Esta clase no puede heredarse.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.Exceptions.JsonConvertException.#ctor">
+            <summary>
+            Constructor sin parámetros.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.Exceptions.JsonConvertException.#ctor(System.String)">
+            <summary>
+            Constructor de la clase que proporciona un mensaje de descripción.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="mensaje">Mensaje de descripción.</param>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.Exceptions.JsonConvertException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor de la clase que proporciona información de un valor serializable y su contexto.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="serializationInfo">Objeto que almacena todos los datos para serializar o deserializar un objeto.</param>
+            <param name="streamingContext">Describe el origen y destino de una secuencia de serialización determinada y proporciona un contexto definido por el llamador adicional.</param>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.Exceptions.JsonConvertException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor de la clase que proporciona un mensaje de descripción, y la excepcion específica que la ocacionó.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="mensaje">Mensaje de descripción.</param>
+            <param name="innerException">Excepción que la lazó.</param>
+        </member>
+        <member name="T:Ada.Framework.Data.Json.IJsonConverter">
+            <summary>
+            Interface IJsonConverter
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.IJsonConverter.ToJson(System.Object)">
+            <summary>
+            Método que permite transformar objetos serializables en Json.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="objeto">Objeto a transformar.</param>
+            <returns>Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.IJsonConverter.ToJson(System.Object,System.Boolean)">
+            <summary>
+            Método que permite transformar objetos serializables en Json.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="objeto">Objeto a transformar.</param>
+            <param name="incluirTipo">Incluir información sobre el tipo del objeto.</param>
+            <returns>Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.IJsonConverter.ToObject(System.String)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="json">Json que representa el objeto original.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.IJsonConverter.ToObject(System.String,System.Boolean)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="json">Json que representa el objeto original.</param>
+            <param name="incluirTipo">Incluir información sobre el tipo del objeto.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.IJsonConverter.ToObject``1(System.String)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <typeparam name="T">Tipo del objeto original.</typeparam>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="json">Json que representa el objeto original.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.IJsonConverter.ToObject``1(System.String,System.Boolean)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <typeparam name="T">Tipo del objeto original.</typeparam>
+            <param name="json">Json que representa el objeto original.</param>
+            <param name="incluirTipo">Incluir información sobre el tipo del objeto.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+        </member>
+        <member name="T:Ada.Framework.Data.Json.JsonConverter">
+            <summary>
+            Representa el componente encargado de transformar objetos en Json y biseversa.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverter.ToJson(System.Object)">
+            <summary>
+            Método que permite transformar objetos serializables en Json.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="objeto">Objeto a transformar.</param>
+            <returns>Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverter.ToJson(System.Object,System.Boolean)">
+            <summary>
+            Método que permite transformar objetos serializables en Json.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="objeto">Objeto a transformar.</param>
+            <param name="incluirTipo">Incluir información sobre el tipo del objeto.</param>
+            <returns>Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverter.ToObject``1(System.String)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <typeparam name="T">Tipo del objeto original.</typeparam>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="json">Json que representa el objeto original.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverter.ToObject``1(System.String,System.Boolean)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <typeparam name="T">Tipo del objeto original.</typeparam>
+            <param name="json">Json que representa el objeto original.</param>
+            <param name="incluirTipo">Incluir información sobre el tipo del objeto.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverter.ToObject(System.String)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+            <param name="json">Json que representa el objeto original.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverter.ToObject(System.String,System.Boolean)">
+            <summary>
+            Método que permite deserializar un json en el objeto original.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <param name="json">Json que representa el objeto original.</param>
+            <param name="incluirTipo">Incluir información sobre el tipo del objeto.</param>
+            <returns>El objeto original contenido en el Json.</returns>
+            <exception cref="T:Ada.Framework.Data.Json.Exceptions.JsonConvertException"></exception>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverter.GetJsonSettings">
+            <summary>
+            Método que retorna la configuración de serialización a utilizar para la transformación.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns>Configuración de serialización.</returns>
+        </member>
+        <member name="T:Ada.Framework.Data.Json.JsonConverterFactory">
+            <summary>
+            Factoría del convertidor Json.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+        </member>
+        <member name="M:Ada.Framework.Data.Json.JsonConverterFactory.ObtenerJsonConverter">
+            <summary>
+            Obtiene la implementación del convertidor a Json.
+            </summary>
+            <remarks>
+                Registro de versiones:
+                
+                    1.0 02/03/2015 Marcos Abraham Hernández Bravo (Ada Ltda.): versión inicial.
+            </remarks>
+            <returns>IJsonConverter.</returns>
+        </member>
+    </members>
+</doc>
